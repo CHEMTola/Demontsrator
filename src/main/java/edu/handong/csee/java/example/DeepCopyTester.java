@@ -1,16 +1,18 @@
 package edu.handong.csee.java.example;
+/**deep copy of a generic list
+ * 09/11/2024
+ */
+import java.util.ArrayList;  // Import the ArrayList class
+import java.util.Collections;// Import the collection class
 
-import java.util.ArrayList;
-import java.util.Collections;
-
-public class DeepCopyTester {
+public class DeepCopyTester {  //call class deepcopyTester 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {  // Making a variable as static void main 
 		DeepCopyTester tester = new DeepCopyTester();
-		tester.run();
+		tester.run();  //tester runing 
 	}
 
-	public void run() {
+	public void run() {  //mehtord
 		
 		IntegerReader intReader = new IntegerReader();
 		
@@ -19,16 +21,16 @@ public class DeepCopyTester {
 		
 		intReader.printOutIntegerNumbers(intNumbers);
 		
-		@SuppressWarnings("unchecked")
+		@SuppressWarnings("unchecked")  // method body
 		ArrayList<Integer> intNumbersDeeplyCopied = (ArrayList<Integer>) intNumbers.clone();
 		
 		intNumbersCopiedShallowly.add(0);
 		
-		Collections.sort(intNumbersDeeplyCopied);
+		Collections.sort(intNumbersDeeplyCopied);  // Let us print the sorted list 
 		
-		intReader.printOutIntegerNumbers(intNumbers);
+		intReader.printOutIntegerNumbers(intNumbers);//let pint out NUmber 
 		
-		System.out.println("Sorted ArrayList: ");
+		System.out.println("Sorted ArrayList: ");    //original list printout
 		intReader.printOutIntegerNumbers(intNumbersDeeplyCopied);
 	}
 
